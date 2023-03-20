@@ -1,2 +1,2 @@
 # KCHBearingWebOrderingApp
- First Project.
+ First Project For this semester
