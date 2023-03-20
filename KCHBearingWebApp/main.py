@@ -1,1 +1,1 @@
-print("Syed Clone too!!")
+print("Syed Clone too ok!!")
