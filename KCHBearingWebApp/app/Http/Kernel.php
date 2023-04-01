@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -54,6 +57,9 @@ class Kernel extends HttpKernel
      */
     protected $middlewareAliases = [
         'auth' => \App\Http\Middleware\Authenticate::class,
+        //Register at kerrnel middleware 26/03/2023
+        'isAdmin' => \App\Http\Middleware\isAdminmiddleware::class,
+        'isUser' => \App\Http\Middleware\isUsermiddleware::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

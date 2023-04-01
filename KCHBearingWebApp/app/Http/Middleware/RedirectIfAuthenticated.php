@@ -20,8 +20,16 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+            // if (Auth::guard($guard)->check()) {
+            //     return redirect(RouteServiceProvider::HOME);
+            // }
+  
+            //New add here 26/03
+            if (Auth::guard($guard)->check() && Auth::user()->role== 1){
+                return redirect()->route('admin.dashboard');
+            }
+            else if(Auth::guard($guard)->check() && Auth::user()->role== 2){
+                return redirect()->route('user.dashboard');
             }
         }
 
