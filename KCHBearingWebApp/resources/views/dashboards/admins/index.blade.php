@@ -1,33 +1,5 @@
+@extends('layouts.app')
 
- <!-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-                <h4> Hi Admin:{{Auth::user()->name}}</h4>
-                <hr>
-                DASHBOARD
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection 
- -->
-
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +10,10 @@
 
     <!--MATERIAL CDN-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--JQuery CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <!--STYLESHEET-->
     <link rel="stylesheet" href="{{asset('style.css')}}">
 </head>
@@ -45,7 +21,7 @@
     <div class="container">
         <aside>
             <div class="logo">
-                <img src="./images/logo.jpg">
+                <img src="{{asset('Bearing.jpg')}}">
                 <h2>KCH<span class="danger"> BEARINGS</span></h2>
             </div>
             <div class="close" id="close-btn">
@@ -53,50 +29,52 @@
             </div>
 
             <div class="sidebar">
-                <a href="#">
+                <a href="/admin/dashboard" class="active" style="text-decoration:none;">
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#" class="active">
+                <a href="/admin/profile" style="text-decoration:none;">
+                    <span class="material-icons-sharp">account_circle</span>
+                    <h3>My profile</h3>
+                </a>
+                <a href="#" style="text-decoration:none;">
                     <span class="material-icons-sharp">person_outline</span>
                     <h3>Customers</h3>
                 </a>
-                <a href="#">
+                <a href="#" style="text-decoration:none;">
                     <span class="material-icons-sharp">receipt_long</span>
                     <h3>Orders</h3>
                 </a>
-                <a href="#">
+                <a href="#" style="text-decoration:none;">
                     <span class="material-icons-sharp">insights</span>
                     <h3>Analytics</h3>
                 </a>
-                <a href="#">
+                <a href="#" style="text-decoration:none;">
                     <span class="material-icons-sharp">mail_outline</span>
                     <h3>Message</h3>
-                    <span class="message-count">26</span>
+                    <!-- <span class="message-count">26</span> -->
                 </a>
-                <a href="#">
+                <a href="/admin/product" style="text-decoration:none;">
                     <span class="material-icons-sharp">inventory</span>
                     <h3>Products</h3>
                 </a>
-                <a href="#">
+                <a href="#" style="text-decoration:none;">
                     <span class="material-icons-sharp">error</span>
                     <h3>Reports</h3>
                 </a>
-                <a href="/admin/setting">
+                <a href="/admin/setting" style="text-decoration:none;">
                     <span class="material-icons-sharp">settings</span>
                     <h3>Settings</h3>
                     
                 </a>
-                <a href="#">
+                <a href="#" style="text-decoration:none;">
                     <span class="material-icons-sharp">add</span>
                     <h3>Add Product</h3>
                 </a>
                 <a href="#" onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
+                         document.getElementById('logout-form').submit();" style="text-decoration:none;">
                          <span class="material-icons-sharp">logout</span>
-                         {{ __('Logout') }}>
-										
-                    
+                         {{ __('Logout') }}>                
                 </a>
 			
             </div>

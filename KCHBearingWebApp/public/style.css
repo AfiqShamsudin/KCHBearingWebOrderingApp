@@ -491,11 +491,11 @@ main .recent-orders a{
     justify-content: space-between;
     align-items: start;
     margin: 0;
-    width: 100%;
+    width: 80%;
 }
 
 .right .sales-analytics .item .icon{
-    padding: 0.6rem;
+    /* padding: 0.6rem; */
     color: var(--color-white);
     border-radius: 50%;
     background: var(--color-primary);
@@ -652,7 +652,7 @@ main .recent-orders a{
 
     .right{
         width: 94%;
-        margin: 0 auto 4rem;
+        /* margin: 0 auto 4rem; */
     }
 
     .right .top{

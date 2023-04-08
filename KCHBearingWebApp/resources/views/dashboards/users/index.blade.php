@@ -1,3 +1,4 @@
+@extends('layouts.app')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,7 @@
 
     <!--MATERIAL CDN-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--STYLESHEET-->
     <link rel="stylesheet" href="{{asset('style.css')}}">
 </head>
@@ -16,7 +18,7 @@
     <div class="container">
         <aside>
             <div class="logo">
-                <img src="./images/logo.jpg">
+                <img src="{{asset('Bearing.jpg')}}">
                 <h2>KCH<span class="danger"> BEARINGS</span></h2>
             </div>
             <div class="close" id="close-btn">
@@ -24,46 +26,46 @@
             </div>
 
             <div class="sidebar">
-                <a href="#">
+                <a href="/user/dashboard" class="active" style="text-decoration:none;">
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#" class="active">
-                    <span class="material-icons-sharp">account_circle</span>
+                <a href="/user/profile" style="text-decoration:none;">
+                    <span class="material-icons-sharp" >account_circle</span>
                     <h3>My Profile</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">receipt_long</span>
+                <a href="#" style="text-decoration:none;">
+                    <span class="material-icons-sharp" >receipt_long</span>
                     <h3>My Orders</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">insights</span>
+                <a href="#" style="text-decoration:none;">
+                    <span class="material-icons-sharp" >insights</span>
                     <h3>Analytics</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">mail_outline</span>
+                <a href="#" style="text-decoration:none;">
+                    <span class="material-icons-sharp" >mail_outline</span>
                     <h3>Message</h3>
-                    <span class="message-count">26</span>
+                    <!-- <span class="message-count">26</span> -->
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">inventory</span>
+                <a href="#" style="text-decoration:none;">
+                    <span class="material-icons-sharp" >inventory</span>
                     <h3>Products</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">error</span>
+                <a href="#" style="text-decoration:none;">
+                    <span class="material-icons-sharp" >error</span>
                     <h3>Reports</h3>
                 </a>
-                <a href="/user/setting">
+                <a href="/user/setting" style="text-decoration:none;">
                     <span class="material-icons-sharp">settings</span>
                     <h3>Settings</h3>
                     
                 </a>
-                <a href="#">
+                <a href="#" style="text-decoration:none;">
                     <span class="material-icons-sharp">add</span>
                     <h3>Add Product</h3>
                 </a>
                 <a href="#" onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
+                         document.getElementById('logout-form').submit();" style="text-decoration:none;">
                          <span class="material-icons-sharp">logout</span>
                          {{ __('Logout') }}>
 										
@@ -75,7 +77,7 @@
         <!--END OF ASIDE-->
         <main>
             <h1>Dashboard</h1>
-            <h3>Salesperson, {{Auth::user()->name}}</h3>
+            <h3>Welcome, {{Auth::user()->name}}</h3>
 
             <div class="date">
                 <input type="date">

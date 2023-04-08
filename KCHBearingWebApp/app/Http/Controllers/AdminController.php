@@ -17,4 +17,9 @@ class AdminController extends Controller
     function setting(){
         return view('dashboards.admins.setting');
     }
+
+    function product(){
+        return view('dashboards.admins.product');
+    }
 }
+?>

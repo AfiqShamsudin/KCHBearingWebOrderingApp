@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'role',
+        //added at 03/04/2023
+        'profile_image',
+        'phone',
+        'Address',
         'password',
     ];
 

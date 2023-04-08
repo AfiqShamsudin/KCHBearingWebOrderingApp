@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             ///me setting roles 26/03/2023
             $table->boolean('role')->nullable();
+            $table->boolean('profile_image')->nullable();
+            $table->boolean('phone')->nullable();
+            $table->boolean('Address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
